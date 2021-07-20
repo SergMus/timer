@@ -20,5 +20,11 @@
   margin-right: 10px;
 }
 .red {
+  background-color: rgb(250, 77, 77);
+}
+.btn.red:hover {
   background-color: brown;
+}
+.btn:hover {
+  background-color: #038857;
 }
