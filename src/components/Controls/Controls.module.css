@@ -1,0 +1,24 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn {
+  padding: 10px 15px;
+  background-color: #04aa6d;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: aliceblue;
+  border: none;
+}
+.btn:not(:last-child) {
+  margin-right: 10px;
+}
+.red {
+  background-color: brown;
+}
