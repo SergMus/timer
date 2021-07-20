@@ -9,7 +9,7 @@ const Controls = (props) => {
     if (clicks === 1) {
       singleClickTimer = setTimeout(function () {
         setClicks(0);
-      }, 250);
+      }, 300);
     } else if (clicks === 2) {
       props.wait();
       setClicks(0);
