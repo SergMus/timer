@@ -15,7 +15,7 @@ const Controls = (props) => {
       setClicks(0);
     }
     return () => clearTimeout(singleClickTimer);
-  }, [clicks]);
+  }, [clicks, props]);
 
   return (
     <div className={styles.controls}>
