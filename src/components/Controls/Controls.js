@@ -31,7 +31,7 @@ const Controls = (props) => {
           Stop
         </button>
       )}
-      <button className={styles.btn} onClick={() => setClicks(clicks + 1)}>
+      <button className={styles.btn} onClick={() => setClicks(2)}>
         Wait
       </button>
       <button className={styles.btn} onClick={props.reset}>
