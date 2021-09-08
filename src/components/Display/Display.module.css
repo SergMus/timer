@@ -22,3 +22,13 @@
   font-size: 2rem;
   margin: 0 10px;
 }
+@media screen and (max-width: 768px) {
+  .display {
+    margin-top: 100px;
+    margin-bottom: 15px;
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+  }
+}
