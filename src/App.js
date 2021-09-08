@@ -53,6 +53,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="header">
+        <span className="header_text">Online stopwatch</span>{" "}
+      </h1>
       <Display time={time} />
       <Controls
         start={start}

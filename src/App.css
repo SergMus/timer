@@ -8,6 +8,18 @@
   flex-direction: column;
 }
 
+.header {
+  font-family: "Lobster";
+  font-size: 3rem;
+  letter-spacing: 1px;
+  color: white;
+}
+.header_text {
+  background-color: #fca205;
+  padding: 5px 15px;
+  border-radius: 15px 0 15px 0;
+}
+
 @media screen and (max-width: 768px) {
   .App {
     margin-top: 0;

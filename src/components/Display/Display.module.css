@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 0 8px 0;
 }
 .cell {
   width: 100px;
@@ -12,9 +13,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid burlywood;
+  border: 4px solid burlywood;
   border-radius: 10px;
-  color: #494450;
+  color: #6d6564;
+  letter-spacing: 2px;
 }
 .dots {
   font-size: 2rem;
