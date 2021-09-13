@@ -46,10 +46,14 @@ table {
 
 @media screen and (max-width: 576px) {
   .table__head {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   .tbody {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .table__col__body {
+    padding: 10px 10px 0 10px;
+    color: #595959;
   }
   .label {
     font-size: 0.75rem;
