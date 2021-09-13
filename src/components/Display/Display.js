@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./../Display/Display.module.css";
 
 const Display = ({ time: { h, m, s }, cells }) => {
