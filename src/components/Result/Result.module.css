@@ -6,10 +6,12 @@
   margin: 0px 0 8px 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.table_wrap {
+.table_wrap,
+form {
   display: flex;
   flex-direction: column;
 }
+
 .label {
   font-size: 0.9rem;
 }
@@ -42,6 +44,13 @@ table {
   border-radius: 5px;
   outline: none;
   background-color: rgb(241, 117, 117);
+}
+.delete_btn {
+  padding: 2px 0;
+  width: 60px;
+  align-self: end;
+  margin-top: 15px;
+  outline: none;
 }
 
 @media screen and (max-width: 576px) {

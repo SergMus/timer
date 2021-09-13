@@ -18,6 +18,7 @@
   width: 100px;
   font-family: "Lobster";
   letter-spacing: 1px;
+  outline: none;
 }
 .btn:not(:last-child) {
   margin-right: 10px;

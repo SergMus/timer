@@ -54,21 +54,29 @@ class Result extends Component {
     });
   }
 
+  clearallHandler() {
+    this.setState({
+      count: 1,
+      timeTable: [],
+    });
+  }
+
   render() {
     return (
       <div className={styles.result}>
         {this.state.timeTable.length ? (
           <div className={styles.table_wrap}>
-            <label htmlFor="check" className={styles.label}>
-              reverse
-            </label>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              id="check"
-              onChange={(e) => this.reverseHandler(e)}
-            />
-
+            <form>
+              <label htmlFor="check" className={styles.label}>
+                reverse
+              </label>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                id="check"
+                onChange={(e) => this.reverseHandler(e)}
+              />
+            </form>
             <table className={styles.table}>
               <thead className={styles.table__head}>
                 <tr className={styles.table__row__head}>
@@ -148,6 +156,12 @@ class Result extends Component {
                 })}
               </tbody>
             </table>
+            <button
+              className={styles.delete_btn}
+              onClick={(e) => this.clearallHandler(e)}
+            >
+              clear all
+            </button>
           </div>
         ) : null}
       </div>
