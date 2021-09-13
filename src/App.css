@@ -2,7 +2,7 @@
   text-align: center;
   margin-top: 100px;
   max-width: 800px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 100px auto;
   display: flex;
   flex-direction: column;
@@ -16,14 +16,31 @@
 }
 .header_text {
   background-color: #fca205;
-  padding: 5px 15px;
   border-radius: 15px 0 15px 0;
 }
+.split {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  border-radius: 50%;
+  border: 1px solid #f29e25;
+  background-color: #f29e25;
+  font-size: 1.3rem;
+  color: white;
+  margin: 20px 0 5px 0;
+}
+.split:active {
+  background-color: white;
+  color: grey;
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .App {
-    margin: 30px 20px 0 20px;
+    margin-top: 30px;
     justify-content: flex-start;
     align-items: center;
+  }
+  .header {
+    font-size: 2.5rem;
   }
 }

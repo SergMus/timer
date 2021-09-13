@@ -31,3 +31,9 @@
 .btn:hover {
   background-color: #038857;
 }
+@media screen and (max-width: 576px) {
+  .btn {
+    width: 90px;
+    /* font-size: 1rem; */
+  }
+}

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createRef, useRef } from "react";
 import "./App.css";
 import Controls from "./components/Controls/Controls";
 import Display from "./components/Display/Display";
+import Result from "./components/Result/Result";
 
 function App() {
   const [time, setTime] = useState({ h: 0, m: 0, s: 0 });
@@ -51,12 +52,20 @@ function App() {
     setInterv(false);
   };
 
+  const clickHandler = () => {
+    childRef.current.split();
+  };
+
+  const childRef = createRef();
+  const cells = useRef(null);
+
   return (
     <div className="App">
       <h1 className="header">
-        <span className="header_text">Online stopwatch</span>{" "}
+        <span className="header_text">Online stopwatch</span>
       </h1>
-      <Display time={time} />
+      <p className="text">{}</p>
+      <Display time={time} cells={cells} />
       <Controls
         start={start}
         reset={reset}
@@ -64,6 +73,10 @@ function App() {
         wait={wait}
         status={interv}
       />
+      <button className="split" onClick={() => clickHandler()}>
+        SPLIT
+      </button>
+      <Result ref={childRef} cells={cells} />
     </div>
   );
 }
