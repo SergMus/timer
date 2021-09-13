@@ -64,7 +64,6 @@ function App() {
       <h1 className="header">
         <span className="header_text">Online stopwatch</span>
       </h1>
-      <p className="text">{}</p>
       <Display time={time} cells={cells} />
       <Controls
         start={start}

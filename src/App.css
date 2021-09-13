@@ -27,7 +27,7 @@
   background-color: #f29e25;
   font-size: 1.3rem;
   color: white;
-  margin: 20px 0 5px 0;
+  margin: 20px 0 0 0;
 }
 .split:active {
   background-color: white;
@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 576px) {
   .App {
-    margin-top: 30px;
+    margin-top: 0px;
     justify-content: flex-start;
     align-items: center;
   }
