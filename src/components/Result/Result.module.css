@@ -48,7 +48,7 @@ table {
 .delete_btn {
   padding: 2px 0;
   width: 60px;
-  align-self: end;
+  align-self: flex-end;
   margin-top: 15px;
   outline: none;
 }
