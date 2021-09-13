@@ -23,13 +23,13 @@ function App() {
     if (updateH === 24) {
       updateH = 0;
     }
-    if (updateM === 60) {
+    if (updateM === 59) {
       updateH++;
       updateM = 0;
     }
-    if (updateS === 60) {
+    if (updateS === 59) {
       updateM++;
-      updateS = 0;
+      updateS = -1;
     }
     updateS++;
     return setTime({ h: updateH, m: updateM, s: updateS });
