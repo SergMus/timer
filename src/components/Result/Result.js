@@ -1,14 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import styles from "./../Result/Result.module.css";
 import { v4 as uuidv4 } from "uuid";
 
 class Result extends Component {
+  // constructor() {
+  //   super();
+  //   this.textRef = createRef();
+  // }
   state = {
     count: 1,
     timeTable: [],
   };
 
-  componentDidMount() {}
+  // componentDidMount() {
+  //   if (this.textRef.current !== null) {
+  //     this.textRef.current.focus();
+  //   }
+  // }
 
   getTime() {
     return `${this.props.cells.current.children[0].innerText}:${this.props.cells.current.children[2].innerText}:${this.props.cells.current.children[4].innerText}`;
@@ -29,8 +37,9 @@ class Result extends Component {
       timeTable: [
         ...this.state.timeTable,
         {
+          show: false,
           number: this.state.count,
-          result: "result",
+          text: "result",
           time: this.getTime(),
           date: this.getDate(),
           id: uuidv4(),
@@ -58,6 +67,39 @@ class Result extends Component {
     this.setState({
       count: 1,
       timeTable: [],
+    });
+  }
+
+  inputTextChange(e) {
+    this.setState({
+      ...this.state.timeTable.filter((item) => {
+        if (item.id === e.target.parentNode.parentNode.parentNode.id) {
+          item.text = e.target.value;
+        }
+        return item;
+      }),
+    });
+  }
+
+  editHandler(e) {
+    this.setState({
+      ...this.state.timeTable.filter((item) => {
+        if (item.id === e.target.parentNode.parentNode.id) {
+          item.show = true;
+        }
+        return item;
+      }),
+    });
+  }
+  saveInputValue(e) {
+    this.setState({
+      ...this.state.timeTable.filter((item) => {
+        if (item.id === e.target.parentNode.parentNode.parentNode.id) {
+          item.text = e.target.parentNode.firstChild.value;
+          item.show = false;
+        }
+        return item;
+      }),
     });
   }
 
@@ -114,13 +156,37 @@ class Result extends Component {
                           styles.label_edit,
                         ].join(" ")}
                       >
-                        {item.result}
+                        {item.show ? null : item.text}
                         ...
                         <i
                           className="fas fa-pencil-alt"
                           style={{ fontSize: ".8rem" }}
+                          onClick={(e) => this.editHandler(e)}
                         ></i>
-                        {/* <input type="text" class="input" /> */}
+                        <div
+                          className={styles.edit_input_wrap}
+                          style={{
+                            display: item.show ? "flex" : "none",
+                          }}
+                        >
+                          <input
+                            type="text"
+                            className={styles.edit_input}
+                            value={item.text}
+                            onChange={(e) => this.inputTextChange(e)}
+                            // autoFocus
+                            // ref={this.textRef}
+                          />
+                          <i
+                            className="fas fa-check-circle"
+                            style={{
+                              fontSize: "1rem",
+                              color: "#04AA6D",
+                              backgroundColor: "white",
+                            }}
+                            onClick={(e) => this.saveInputValue(e)}
+                          ></i>
+                        </div>
                       </td>
                       <td
                         className={[styles.table__col__body, styles.total].join(
