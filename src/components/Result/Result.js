@@ -1,22 +1,12 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import styles from "./../Result/Result.module.css";
 import { v4 as uuidv4 } from "uuid";
 
 class Result extends Component {
-  // constructor() {
-  //   super();
-  //   this.textRef = createRef();
-  // }
   state = {
     count: 1,
     timeTable: [],
   };
-
-  // componentDidMount() {
-  //   if (this.textRef.current !== null) {
-  //     this.textRef.current.focus();
-  //   }
-  // }
 
   getTime() {
     return `${this.props.cells.current.children[0].innerText}:${this.props.cells.current.children[2].innerText}:${this.props.cells.current.children[4].innerText}`;
@@ -174,8 +164,7 @@ class Result extends Component {
                             className={styles.edit_input}
                             value={item.text}
                             onChange={(e) => this.inputTextChange(e)}
-                            // autoFocus
-                            // ref={this.textRef}
+                            autoFocus
                           />
                           <i
                             className="fas fa-check-circle"
